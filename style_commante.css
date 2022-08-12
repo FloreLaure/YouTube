@@ -1,0 +1,227 @@
+
+/*utilisation de la police google roboto*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+
+/*definition de la marge de la page sur toute les balises html utiliser*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*definition de la police des caracteres sur le corps de la page. roboto et san-serif si roboto est indisponible*/
+body {
+    font-family: 'Roboto', sans-serif;
+  }
+
+
+  /* definition de la hauteur de l'en tete et de lespacement entre ses element. les element sont aligner de la gauche vers la droite*/
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 15px;
+  }
+
+/*dimensionnement de la partie de la page visible à tout moment*/
+  main {
+    height: calc(100vh - 70px);
+    display: flex;
+    background-color: #f9f9f9;
+  }
+
+
+  /* dimentionnement de la bare lateral et definition de sa couleur de fond*/ 
+.side-bar {
+    height: 100%;
+    width: 17%;
+    background-color: white;
+    overflow-y: hidden; 
+} 
+
+/*requete multimediat pour rendre la page pareille sur tout ecran*/
+@media (max-width: 768px) {
+    .side-bar {
+      display: none;
+    }
+  }
+
+  .left {
+    display: flex;
+    align-items: center;
+   }
+   /*pointer du doigt quand le curseur passe dessus*/
+   .left #menu {
+    padding: 0 7px;
+    cursor: pointer;
+   }
+
+/*dimentionnement et bordure de la patie recherche*/
+   .search {
+    display: flex;
+   }
+   
+   .search form {
+    display: flex;
+    border: 1px solid #ddd;
+    height: 45px;
+   }
+
+   /*dimentionnement et bordure du piont d'entrer de la partie recherche*/
+   .search input {
+    width: 600px;
+    padding:10px;
+    border: 0;
+    height: 100%;
+    border-radius: 2px 0 0 2px
+  }
+  
+  input:focus {
+    outline: none;
+    border: 1px solid #ddd;
+  }
+
+  .search input {
+    width: 600px;
+    padding:10px;
+    border: 0;
+    height: 100%;
+    border-radius: 2px 0 0 2px
+  }
+  
+  input:focus {
+    outline: none;
+    border: 1px solid #ddd;
+  }
+
+/*le style des icones de la partie recherche*/
+  .material-icons {
+    color: rgb(100, 100, 100);
+    padding: 0 7px;
+    cursor: pointer;
+  }
+
+  .nav {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    margin-top: 15px;
+  }
+/* definition du style quand on passe le curseur sur un element du menu de la bare lateral*/
+  .nav-link {
+    display: flex;
+    align-items: center;
+    padding: 12px 25px;
+  }
+ 
+ .nav-link span {
+    margin-left: 15px;
+  }
+ 
+ .nav-link:hover {
+    background: #e5e5e5;
+    cursor: pointer;
+  }
+ 
+ .active {
+    background: #e5e5e5;
+ }
+
+
+ /*la separation des trois premiers menus aux autres*/
+ hr {
+    height: 1px;
+    background-color: #e5e5e5;
+    border: none;
+  }
+/*fin bare laterale*/
+
+
+/*style de la partie contenant les videos*/
+  .content {
+    background-color: #f9f9f9;
+    width: 100%;
+    height: 100%;
+    padding: 15px 15px;
+    border-top: 1px solid #ddd;
+    overflow-y: scroll;
+  }
+
+  .videos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;   /*quands l'espace ne peut pas contenir tout les elements souhaiter, le sur plus se positionne a la ligne suivante. ici 4 element par ligne*/
+
+  }
+  
+  /*dimensionnement du conteneur chaque video*/
+  .video {
+    width: 270px;
+    margin-bottom: 30px;
+  }
+
+
+  .thumbnail {
+    width: 100%;
+    height: 170px;
+  }
+  
+  .thumbnail img {
+    object-fit: cover;  /*adapter les images à leurs conteneurs*/
+    height: 94%;
+    width: 100%;
+  }
+  /*dimensionnement de l'image de chaque auteur*/
+  .author img {
+    object-fit: cover;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+  }
+
+  /*style de la description de chaque video*/
+  .details {
+    display: flex;
+  }
+  
+  .title {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .title h3 {
+    color: rgb(3, 3, 3);
+    line-height: 18px;
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+  
+  .title a,
+  span {
+    text-decoration: none;
+    color: rgb(96, 96, 96);
+    font-size: 12px;
+  }
+
+  /*quand la taille de l'ecran est inferieur ou egale à 768px ,la partie lateral et l'entrer de recherche sera caché*/
+  @media (max-width: 768px) {
+    .side-bar {
+      display: none;
+    }
+    .search {
+      display: none;
+    }
+}
+ 
+@media (max-width: 900px) {
+    .search input {
+      width: 25rem;
+    }
+  }
+
+
